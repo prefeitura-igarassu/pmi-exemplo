@@ -64,6 +64,8 @@ class ProdutoController extends Controller
 
     public function pesquisar( Request $request )
     {
+        $perPage = $request->input( "perPage" , 3 );
+
         $pesquisar = Produto::
               when( $request->input( "nome" )      ,  fn ( $query , $value ) => $query->where( "nome"      , "like" , "%{$value}%" ) )
             ->when( $request->input( "categoria" ) ,  fn ( $query , $value ) => $query->where( "categoria" , "like" , "%{$value}%" ) )
@@ -78,7 +80,7 @@ class ProdutoController extends Controller
 
         //where, pagination() ...
         return view( "produtos" , [
-            "produtos" => $pesquisar->paginate( 3 ),
+            "produtos" => $pesquisar->paginate( $perPage ),
             "input"    => $request->input(),
         ] );
     }
