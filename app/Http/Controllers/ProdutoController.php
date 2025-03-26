@@ -78,8 +78,8 @@ class ProdutoController extends Controller
 
         //where, pagination() ...
         return view( "produtos" , [
-            "produtos" => $pesquisar->get(),
-            "input" => $request->input(),
+            "produtos" => $pesquisar->paginate( 3 ),
+            "input"    => $request->input(),
         ] );
     }
 

@@ -160,6 +160,26 @@
                 </table>
             </form>
           </div>
+
+          <div class="notification">
+            <div class="level">
+              <div class="level-left">
+                <div class="level-item">
+                  <div class="buttons has-addons">
+                    @for ( $i = 1; $i <= $produtos->lastPage(); $i++)
+                        <a href="{{ $produtos->url( $i ) }}" class="button {{ $produtos->currentPage() == $i ? 'is-active' : ''}}">{{ $i }}</a>
+                    @endfor
+                  </div>
+
+                </div>
+              </div>
+              <div class="level-right">
+                <div class="level-item">
+                  <small>Página {{ $produtos->currentPage() }} de {{ $produtos->lastPage() }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         
