@@ -21,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Route::pattern( 'produto' , '[0-9]+' );
-        Route::model  ( 'produto' , App\Model\Produto::class );
+        Route::model  ( 'produto' , \App\Models\Produto::class );
     }
 }

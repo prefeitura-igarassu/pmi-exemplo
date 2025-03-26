@@ -15,11 +15,11 @@ Route::get('dashboard', function () {
 
 
 //// --------- -//// PRODUTOS
-Route::get ('/produtos/{produto}'  , "App\Http\Controllers\ProdutoController@get"       );
-Route::post('/produtos/{produto}'  , "App\Http\Controllers\ProdutoController@alterar"   );
-Route::delete('/produtos/{produto}', "App\Http\Controllers\ProdutoController@excluir"   );
-Route::post('/produtos'            , "App\Http\Controllers\ProdutoController@inserir"   );
-Route::get ('/produtos'            , "App\Http\Controllers\ProdutoController@pesquisar" );
+Route::get ('/produtos/{produto}'         , "App\Http\Controllers\ProdutoController@get"       );
+Route::post('/produtos/{produto}'         , "App\Http\Controllers\ProdutoController@alterar"   );
+Route::get ('/produtos/{produto}/deletar' , "App\Http\Controllers\ProdutoController@excluir"   );
+Route::post('/produtos'                   , "App\Http\Controllers\ProdutoController@inserir"   );
+Route::get ('/produtos'                   , "App\Http\Controllers\ProdutoController@pesquisar" );
 
 
 
