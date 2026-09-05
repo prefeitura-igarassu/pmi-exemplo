@@ -57,11 +57,11 @@ class ProdutoController extends Controller
 
     public function get( Request $request , Produto $produto )
     {
-        return view( "produto" , [
+        return view( "produtos/editar" , [
             "produto" => $produto
         ] );
     }
-
+    
     public function pesquisar( Request $request )
     {
         $perPage = $request->input( "perPage" , 3 );
@@ -79,7 +79,7 @@ class ProdutoController extends Controller
         Log::info( "[PRODUTOS] " . $pesquisar->toSql() );
 
         //where, pagination() ...
-        return view( "produtos" , [
+        return view( "produtos/listar" , [
             "produtos" => $pesquisar->paginate( $perPage ),
             "input"    => $request->input(),
         ] );

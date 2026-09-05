@@ -22,6 +22,13 @@ Route::post('/produtos'                   , "App\Http\Controllers\ProdutoControl
 Route::get ('/produtos'                   , "App\Http\Controllers\ProdutoController@pesquisar" );
 
 
+//// --------- -//// PRODUTOS
+Route::get ('/jquery/produtos/{produto}'   , "App\Http\Controllers\JQueryProdutoController@get"       );
+Route::post('/jquery/produtos/{produto}'   , "App\Http\Controllers\JQueryProdutoController@alterar"   );
+Route::delete('/jquery/produtos/{produto}' , "App\Http\Controllers\JQueryProdutoController@excluir"   );
+Route::post('/jquery/produtos'             , "App\Http\Controllers\JQueryProdutoController@inserir"   );
+Route::get ('/jquery/produtos'             , "App\Http\Controllers\JQueryProdutoController@pesquisar" );
+
 
 
 
